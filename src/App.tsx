@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+// Atom
+import { Checkboxes } from "./components/molecules";
 
 function App() {
+  const [items, setItems] = useState([
+    { label: "Hello", value: "Hello", checked: false },
+    { label: "Hello2", value: "Hello2", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+    { label: "Hello3", value: "Hello3", checked: false },
+  ]);
+
+  const handleChangeCheckbox = (value: string) => {
+    setItems((prevItems) => {
+      return prevItems.map((prevItem) =>
+        prevItem.value === value
+          ? { ...prevItem, checked: !prevItem.checked }
+          : prevItem
+      );
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Checkboxes items={items} onChange={handleChangeCheckbox} />
     </div>
   );
 }

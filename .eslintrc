@@ -28,7 +28,7 @@
   },
   "settings": {
     "react": {
-      "version": "detect" // Detect react version
+      "version": "detect"
     }
   }
 }
