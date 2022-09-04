@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 // Molecules
-import { Checkboxes, Graph } from "./components/molecules";
+import { Checkboxes } from "./components/molecules";
+
+// Organism
+import { PopulationChart } from "./components/organism";
 
 // Config
 import { axios as axiosInstance } from "./config";
@@ -96,7 +99,7 @@ function App() {
   return (
     <div className="App">
       <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
-      <Graph data={populationData} />
+      <PopulationChart data={populationData} />
     </div>
   );
 }
