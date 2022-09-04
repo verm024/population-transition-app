@@ -12,10 +12,6 @@ interface Data {
   name: string;
 }
 
-interface Props {
-  data: Data[];
-}
-
 interface Line {
   strokeColor: string;
   key: string;
@@ -24,6 +20,10 @@ interface Line {
 interface MappedData {
   [key: string]: number | string;
   year: string;
+}
+
+interface Props {
+  data: Data[];
 }
 
 function PopulationChart({ data }: Props) {
