@@ -16,6 +16,11 @@ import { axios as axiosInstance } from "./config";
 const resasBaseURL = process.env.REACT_APP_RESAS_BASE_URL || "";
 const resasApiKey = process.env.REACT_APP_API_KEY || "";
 
+// Redux
+import { RootState } from "./store";
+import { setLoading } from "./store/reducers/globalReducer";
+import { useSelector, useDispatch } from "react-redux";
+
 interface Prefecture {
   checked: boolean;
   label: string;
@@ -34,6 +39,15 @@ function App() {
 
   const api = axiosInstance(resasBaseURL);
   api.defaults.headers.common["X-API-KEY"] = resasApiKey;
+
+  const loading = useSelector((state: RootState) => state.loading);
+  console.log(loading);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setLoading(true));
+    console.log(loading);
+  }, []);
 
   useEffect(() => {
     const getPrefectures = async () => {
