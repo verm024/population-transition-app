@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+// Atom
+import { Header } from "./components/atom";
+
 // Molecules
 import { Checkboxes } from "./components/molecules";
 
@@ -98,8 +101,11 @@ function App() {
 
   return (
     <div className="App">
-      <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
-      <PopulationChart data={populationData} />
+      <Header>Population Transition App</Header>
+      <div className="app-container">
+        <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
+        <PopulationChart data={populationData} />
+      </div>
     </div>
   );
 }
