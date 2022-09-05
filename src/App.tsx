@@ -21,6 +21,9 @@ import { RootState } from "./store";
 import { setLoading } from "./store/reducers/globalReducer";
 import { useSelector, useDispatch } from "react-redux";
 
+// CSS
+import "./App.css";
+
 interface Prefecture {
   checked: boolean;
   label: string;
@@ -108,7 +111,9 @@ function App() {
           });
         }
       }
-      dispatch(setLoading(false));
+      if (checkedPrefectures.length > 0) {
+        dispatch(setLoading(false));
+      }
     };
     getPopulation();
   }, [prefectures]);
@@ -116,10 +121,18 @@ function App() {
   return (
     <div className="App">
       {loading && <Loading />}
-      <Header>Population Transition App</Header>
+      <Header>人口推移アプリ</Header>
       <div className="app-container">
-        <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
-        <PopulationChart data={populationData} />
+        <section className="prefecture">
+          <h4 className="subtitle">都道府県</h4>
+          <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
+        </section>
+        {populationData.length > 0 && (
+          <section className="chart">
+            <h4 className="subtitle">人口数グラフ</h4>
+            <PopulationChart data={populationData} />
+          </section>
+        )}
       </div>
     </div>
   );

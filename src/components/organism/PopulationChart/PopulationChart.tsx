@@ -5,6 +5,7 @@ import { LChart } from "../../molecules";
 
 // Library
 import Rand from "rand-seed";
+import { ResponsiveContainer } from "recharts";
 
 interface Data {
   prefCode: string;
@@ -74,15 +75,19 @@ function PopulationChart({ data }: Props) {
   }, [mappedData]);
 
   return (
-    <LChart
-      data={mappedData}
-      lines={lines}
-      height={200}
-      width={500}
-      xAxisKey="year"
-      useTooltip
-      useLegend
-    />
+    <ResponsiveContainer width="100%" height={400}>
+      <LChart
+        data={mappedData}
+        lines={lines}
+        height={0}
+        width={0}
+        xAxisKey="year"
+        useLegend
+        xAxisLabel="年度"
+        yAxisLabel="人口数"
+        margin={{ top: 0, bottom: 40, left: 40, right: 0 }}
+      />
+    </ResponsiveContainer>
   );
 }
 

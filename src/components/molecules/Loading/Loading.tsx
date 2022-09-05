@@ -13,7 +13,7 @@ function Loading() {
   return (
     <div className="loading-container">
       <Image src={Spinner} />
-      <p className="loading-text">Please wait!</p>
+      <p className="loading-text">ちょっとお待ちください！</p>
     </div>
   );
 }

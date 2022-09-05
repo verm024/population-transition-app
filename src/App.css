@@ -1,0 +1,17 @@
+.app-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 32px;
+}
+
+.subtitle {
+  margin-bottom: 12px;
+}
+
+.chart {
+  margin-top: 24px;
+}
+
+.chart .subtitle {
+  margin-bottom: 16px;
+}
