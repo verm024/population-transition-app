@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Header } from "./components/atom";
 
 // Molecules
-import { Checkboxes } from "./components/molecules";
+import { Checkboxes, Loading } from "./components/molecules";
 
 // Organism
 import { PopulationChart } from "./components/organism";
@@ -34,20 +34,13 @@ interface Population {
 }
 
 function App() {
+  const dispatch = useDispatch();
+
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
   const [populationData, setPopulationData] = useState<Population[]>([]);
 
   const api = axiosInstance(resasBaseURL);
   api.defaults.headers.common["X-API-KEY"] = resasApiKey;
-
-  const loading = useSelector((state: RootState) => state.loading);
-  console.log(loading);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setLoading(true));
-    console.log(loading);
-  }, []);
 
   useEffect(() => {
     const getPrefectures = async () => {
@@ -115,6 +108,7 @@ function App() {
 
   return (
     <div className="App">
+      <Loading />
       <Header>Population Transition App</Header>
       <div className="app-container">
         <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
