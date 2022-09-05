@@ -31,6 +31,9 @@ function PopulationChart({ data }: Props) {
   const [lines, setLines] = useState<Line[]>([]);
 
   useEffect(() => {
+    if (data.length === 0) {
+      return setMappedData([]);
+    }
     data.forEach((d) => {
       d.data.forEach(
         (yearlyData: { year: number; value: number }, index: number) => {

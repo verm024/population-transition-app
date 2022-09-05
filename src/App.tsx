@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Header } from "./components/atom";
 
 // Molecules
-import { Checkboxes } from "./components/molecules";
+import { Checkboxes, Loading } from "./components/molecules";
 
 // Organism
 import { PopulationChart } from "./components/organism";
@@ -15,6 +15,11 @@ import { axios as axiosInstance } from "./config";
 // Constants
 const resasBaseURL = process.env.REACT_APP_RESAS_BASE_URL || "";
 const resasApiKey = process.env.REACT_APP_API_KEY || "";
+
+// Redux
+import { RootState } from "./store";
+import { setLoading } from "./store/reducers/globalReducer";
+import { useSelector, useDispatch } from "react-redux";
 
 interface Prefecture {
   checked: boolean;
@@ -29,6 +34,9 @@ interface Population {
 }
 
 function App() {
+  const dispatch = useDispatch();
+  const loading = useSelector((state: RootState) => state.loading);
+
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
   const [populationData, setPopulationData] = useState<Population[]>([]);
 
@@ -37,6 +45,7 @@ function App() {
 
   useEffect(() => {
     const getPrefectures = async () => {
+      dispatch(setLoading(true));
       const res = await api.get("api/v1/prefectures");
       const data = res.data.result;
       setPrefectures(
@@ -48,6 +57,7 @@ function App() {
           };
         })
       );
+      dispatch(setLoading(false));
     };
     getPrefectures();
   }, []);
@@ -67,6 +77,9 @@ function App() {
       const checkedPrefectures = prefectures.filter(
         (prefecture) => prefecture.checked
       );
+      if (checkedPrefectures.length > 0) {
+        dispatch(setLoading(true));
+      }
       setPopulationData(
         populationData.filter((population) => {
           return checkedPrefectures.some(
@@ -95,12 +108,14 @@ function App() {
           });
         }
       }
+      dispatch(setLoading(false));
     };
     getPopulation();
   }, [prefectures]);
 
   return (
     <div className="App">
+      {loading && <Loading />}
       <Header>Population Transition App</Header>
       <div className="app-container">
         <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
