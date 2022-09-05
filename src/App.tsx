@@ -118,6 +118,11 @@ function App() {
     getPopulation();
   }, [prefectures]);
 
+  // Change app Title
+  useEffect(() => {
+    document.title = "人口推移アプリ";
+  }, []);
+
   return (
     <div className="App">
       {loading && <Loading />}
