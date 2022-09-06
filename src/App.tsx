@@ -24,6 +24,9 @@ import { useSelector, useDispatch } from "react-redux";
 // CSS
 import "./App.css";
 
+const api = axiosInstance(resasBaseURL);
+api.defaults.headers.common["X-API-KEY"] = resasApiKey;
+
 interface Prefecture {
   checked: boolean;
   label: string;
@@ -43,16 +46,13 @@ function App() {
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
   const [populationData, setPopulationData] = useState<Population[]>([]);
 
-  const api = axiosInstance(resasBaseURL);
-  api.defaults.headers.common["X-API-KEY"] = resasApiKey;
-
   useEffect(() => {
     const getPrefectures = async () => {
       dispatch(setLoading(true));
       const res = await api.get("api/v1/prefectures");
       const data = res.data.result;
       setPrefectures(
-        data.map((prefecture: any) => {
+        data.map((prefecture: { prefCode: number; prefName: "string" }) => {
           return {
             label: prefecture.prefName,
             value: `${prefecture.prefCode}`,
@@ -63,7 +63,7 @@ function App() {
       dispatch(setLoading(false));
     };
     getPrefectures();
-  }, []);
+  }, [dispatch]);
 
   const handleChangeCheckbox = (value: string) => {
     setPrefectures((prevPrefectures) => {
@@ -76,20 +76,17 @@ function App() {
   };
 
   useEffect(() => {
-    const getPopulation = async () => {
-      const checkedPrefectures = prefectures.filter(
-        (prefecture) => prefecture.checked
-      );
-      if (checkedPrefectures.length > 0) {
-        dispatch(setLoading(true));
-      }
-      setPopulationData(
-        populationData.filter((population) => {
-          return checkedPrefectures.some(
+    const removeUncheckedPopulation = () => {
+      setPopulationData((prevPopulationData) =>
+        prevPopulationData.filter((population) =>
+          checkedPrefectures.some(
             (prefecture) => prefecture.value === population.prefCode
-          );
-        })
+          )
+        )
       );
+    };
+
+    const getPopulation = async (checkedPrefectures: Prefecture[]) => {
       for await (const prefecture of checkedPrefectures) {
         if (
           !populationData.some(
@@ -115,8 +112,19 @@ function App() {
         dispatch(setLoading(false));
       }
     };
-    getPopulation();
-  }, [prefectures]);
+
+    const checkedPrefectures = prefectures.filter(
+      (prefecture) => prefecture.checked
+    );
+
+    removeUncheckedPopulation();
+
+    if (checkedPrefectures.length > 0) {
+      dispatch(setLoading(true));
+      getPopulation(checkedPrefectures);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prefectures, dispatch]);
 
   // Change app Title
   useEffect(() => {
