@@ -72,7 +72,7 @@ function PopulationChart({ data }: Props) {
         return copy;
       });
     });
-  }, [mappedData]);
+  }, [data]);
 
   return (
     <ResponsiveContainer width="100%" height={400}>
