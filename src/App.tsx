@@ -76,7 +76,7 @@ function App() {
   };
 
   useEffect(() => {
-    const removeUncheckedPopulation = () => {
+    const removeUncheckedPopulation = (checkedPrefectures: Prefecture[]) => {
       setPopulationData((prevPopulationData) =>
         prevPopulationData.filter((population) =>
           checkedPrefectures.some(
@@ -117,7 +117,7 @@ function App() {
       (prefecture) => prefecture.checked
     );
 
-    removeUncheckedPopulation();
+    removeUncheckedPopulation(checkedPrefectures);
 
     if (checkedPrefectures.length > 0) {
       dispatch(setLoading(true));
