@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/population-transition-app/static/css/main.ab76354a.css",
-    "main.js": "/population-transition-app/static/js/main.79312101.js",
+    "main.css": "/population-transition-app/static/css/main.4c7db179.css",
+    "main.js": "/population-transition-app/static/js/main.8bb99cd5.js",
     "static/js/787.c600b582.chunk.js": "/population-transition-app/static/js/787.c600b582.chunk.js",
     "static/media/spinner.gif": "/population-transition-app/static/media/spinner.d7900a245236c3625158.gif",
     "index.html": "/population-transition-app/index.html",
-    "main.ab76354a.css.map": "/population-transition-app/static/css/main.ab76354a.css.map",
-    "main.79312101.js.map": "/population-transition-app/static/js/main.79312101.js.map",
+    "main.4c7db179.css.map": "/population-transition-app/static/css/main.4c7db179.css.map",
+    "main.8bb99cd5.js.map": "/population-transition-app/static/js/main.8bb99cd5.js.map",
     "787.c600b582.chunk.js.map": "/population-transition-app/static/js/787.c600b582.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab76354a.css",
-    "static/js/main.79312101.js"
+    "static/css/main.4c7db179.css",
+    "static/js/main.8bb99cd5.js"
   ]
 }
