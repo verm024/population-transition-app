@@ -15,13 +15,21 @@ interface Item {
 interface Props {
   items: Item[];
   onChange(value: string): void;
+  "cy-name"?: string;
 }
 
-function Checkboxes({ items, onChange }: Props) {
+function Checkboxes({ items, onChange, ...rest }: Props) {
   return (
-    <div className="checkboxes-container">
+    <div
+      className="checkboxes-container"
+      data-cy={`checkboxes-container-${rest["cy-name"]}`}
+    >
       {items.map((item) => (
-        <div className="checkbox-wrapper" key={item.value}>
+        <div
+          className="checkbox-wrapper"
+          key={item.value}
+          data-cy={`checkbox-wrapper-${rest["cy-name"]}-${item.value}`}
+        >
           <Checkbox
             checked={item.checked}
             label={item.label}

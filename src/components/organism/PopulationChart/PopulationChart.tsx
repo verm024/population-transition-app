@@ -16,6 +16,7 @@ interface Data {
 interface Line {
   strokeColor: string;
   key: string;
+  id: string | number;
 }
 
 interface MappedData {
@@ -68,7 +69,7 @@ function PopulationChart({ data }: Props) {
       const strokeColor = `rgb(${rgbval[0]}, ${rgbval[1]}, ${rgbval[2]})`;
       setLines((prevLines: Line[]) => {
         const copy = [...prevLines];
-        copy[index] = { strokeColor, key: d.name };
+        copy[index] = { strokeColor, key: d.name, id: d.prefCode };
         return copy;
       });
     });
@@ -86,6 +87,7 @@ function PopulationChart({ data }: Props) {
         xAxisLabel="年度"
         yAxisLabel="人口数"
         margin={{ top: 0, bottom: 40, left: 40, right: 0 }}
+        cy-name="population"
       />
     </ResponsiveContainer>
   );

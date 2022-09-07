@@ -138,10 +138,14 @@ function App() {
       <div className="app-container">
         <section className="prefecture">
           <h4 className="subtitle">都道府県</h4>
-          <Checkboxes items={prefectures} onChange={handleChangeCheckbox} />
+          <Checkboxes
+            cy-name="prefecture"
+            items={prefectures}
+            onChange={handleChangeCheckbox}
+          />
         </section>
         {populationData.length > 0 && (
-          <section className="chart">
+          <section className="chart" data-cy="section-chart">
             <h4 className="subtitle">人口数グラフ</h4>
             <PopulationChart data={populationData} />
           </section>
