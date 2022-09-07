@@ -4,9 +4,6 @@ describe("Population Transition App main test cases", () => {
       "GET",
       "https://opendata.resas-portal.go.jp/api/v1/prefectures"
     ).as("getPrefectures");
-    cy.intercept("GET", "api/v1/population/composition/perYear").as(
-      "getPopulation"
-    );
     cy.visit("/");
   });
 
