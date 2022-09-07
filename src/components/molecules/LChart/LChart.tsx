@@ -22,6 +22,7 @@ interface Props {
   lines?: {
     strokeColor?: string;
     key: string;
+    id: string | number;
   }[];
   xAxisKey?: string;
   useTooltip?: boolean;
@@ -34,6 +35,7 @@ interface Props {
     left?: number;
     bottom?: number;
   };
+  "cy-name"?: string;
 }
 
 function LChart({
@@ -53,9 +55,10 @@ function LChart({
     left: 0,
     bottom: 0,
   },
+  ...rest
 }: Props) {
   return (
-    <div>
+    <div data-cy={`lchart-${rest["cy-name"]}`}>
       <LineChart width={width} height={height} margin={margin} data={data}>
         <XAxis dataKey={xAxisKey}>
           <Label value={xAxisLabel} position="bottom" offset={20} />
@@ -65,9 +68,10 @@ function LChart({
         </YAxis>
         {useTooltip && <Tooltip />}
         {useLegend && <Legend verticalAlign="top" />}
-        {lines.map((line, index) => (
+        {lines.map((line) => (
           <Line
-            key={index}
+            key={line.id}
+            name={line.key}
             dataKey={line.key}
             type={type}
             stroke={line.strokeColor || "#000000"}
