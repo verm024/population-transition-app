@@ -12,7 +12,7 @@ Application ID: 17714-24709-95543-2448
 
 ### Application Description
 
-人口推移アプリ is a web application that can be used to view the population transition chart of some prefectures in Japan. This project was built to fulfill the requirement (code check) of Yumemi Co Ltd. frontend engineer job application.
+人口推移アプリ is a web application that can be used to view the population transition chart of some prefectures in Japan. This project was built to fulfill the requirement (code check) of Yumemi Co., Ltd. frontend engineer job application.
 
 ### Live URL
 
@@ -51,6 +51,10 @@ Here is a tutorial about how to run the end-to-end testing script.
 - Choose Chrome as the browser and click `Start E2E Testing in Chrome`
 - Open the Specs tab and click on the script named `cypress/e2e/spec.cy.ts`
 - Please wait until the tests are finished
+
+## Postscript
+
+Majority of the Japanese version of this document is translated by the help of [Google Translate](https://translate.google.co.id/?hl=id) and [Yandex Translate](https://translate.yandex.com/?lang=en-ja)
 
 # 日本語の説明
 
