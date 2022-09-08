@@ -48,8 +48,11 @@ Here is a tutorial about how to run the end-to-end testing script.
 - Run the application in developer mode using the command `npm start`
 - Run the command `npm run cypress:open` to open Cypress GUI
 - Choose the `E2E Testing` option
+![image](https://user-images.githubusercontent.com/45099597/189073082-64dfc1ba-5f50-44b4-a092-bdef0c14a681.png)
 - Choose Chrome as the browser and click `Start E2E Testing in Chrome`
+![image](https://user-images.githubusercontent.com/45099597/189073294-6a43ae7c-ad86-4ec5-b0db-ee34563c099b.png)
 - Open the Specs tab and click on the script named `cypress/e2e/spec.cy.ts`
+![image](https://user-images.githubusercontent.com/45099597/189073467-77453d35-2e03-4d2b-afb6-89fc08e87f4e.png)
 - Please wait until the tests are finished
 
 ## Postscript
@@ -106,8 +109,11 @@ https://verm024.github.io/population-transition-app
 - コマンド`npm start`を使用して開発モードでアプリを実行してください
 - コマンド`npm run cypress:open`を実行して Cypress GUI を開いてください
 - `E2E Testing`のオプションを選んでください
+![image](https://user-images.githubusercontent.com/45099597/189073082-64dfc1ba-5f50-44b4-a092-bdef0c14a681.png)
 - ブラウザとして Chrome を選んで、`Start E2E Testing in Chrome`のボタンをクリックしてください
+![image](https://user-images.githubusercontent.com/45099597/189073294-6a43ae7c-ad86-4ec5-b0db-ee34563c099b.png)
 - Specs タブを開いて、`cypress/e2e/spec.cy.ts`というスクリプトをクリックしてください
+![image](https://user-images.githubusercontent.com/45099597/189073467-77453d35-2e03-4d2b-afb6-89fc08e87f4e.png)
 - テストが終わるまでお待ちください
 
 ## 追伸
