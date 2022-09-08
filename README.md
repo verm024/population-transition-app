@@ -19,6 +19,7 @@ Application ID: 17714-24709-95543-2448
 https://verm024.github.io/population-transition-app
 
 ### Development Date
+
 September 2nd, 2022 to September 8th, 2022
 
 ## Technologies Used
@@ -50,3 +51,61 @@ Here is a tutorial about how to run the end-to-end testing script.
 - Choose Chrome as the browser and click `Start E2E Testing in Chrome`
 - Open the Specs tab and click on the script named `cypress/e2e/spec.cy.ts`
 - Please wait until the tests are finished
+
+# 日本語の説明
+
+名前: ムハマド・ナウファル・アルカン・ラフィー
+
+応募 ID: 17714-24709-95543-2448
+
+## プロジェクトの説明
+
+### アプリの名
+
+人口推移アプリ
+
+### アプリの内容
+
+「人口推移アプリ」は、日本の都道府県の人口推移のチャートを閲覧できる Web アプリです。 このプロジェクトは、株式会社ゆめみのフロントエンドエンジニア求人応募の要件を満たすために開発されました。
+
+### アプリ URL
+
+https://verm024.github.io/population-transition-app
+
+### 開発日
+
+2022 年 9 月 2 日から、2022 年 9 月 8 日まで
+
+## 使用した技術
+
+- フロントエンド フレームワーク: ReactJS (ネイティブの HTML と CSS を使用)
+- プログラミング言語: Typescript
+- バージョンコントロールシステム: Github
+- プロジェクト管理: Github Kanban
+- アプリケーションの展開: Github Pages
+- エンドツーエンドのテスト: Cypress
+- 追加の NPM モジュール: axios, prettier, eslint, rand-seed, react-redux, recharts
+
+## 開発環境
+
+開発モードを開始するには、`npm start`コマンドを実行してください。
+
+### 環境変数
+
+- REACT_APP_API_KEY: こちらは秘密で、自分の Resas API キーを使用してください
+- REACT_APP_RESAS_BASE_URL: `https://opendata.resas-portal.go.jp`
+
+## テスト
+
+こちらは、エンドツーエンドのテストスクリプトを実行する方法についてのチュートリアルです。
+
+- コマンド`npm start`を使用して開発モードでアプリを実行してください
+- コマンド`npm run cypress:open`を実行して Cypress GUI を開いてください
+- `E2E Testing`のオプションを選んでください
+- ブラウザとして Chrome を選んで、`Start E2E Testing in Chrome`のボタンをクリックしてください
+- Specs タブを開いて、`cypress/e2e/spec.cy.ts`というスクリプトをクリックしてください
+- テストが終わるまでお待ちください
+
+## 追伸
+
+この資料の日本語版の大部分は、[Google Translate](https://translate.google.co.id/?hl=id)と[Yandex Translate](https://translate.yandex.com/?lang=en-ja)の助けを借りて翻訳されています
