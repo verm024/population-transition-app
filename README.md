@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# English Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name: Muhammad Naufal Arkan Rafii
 
-## Available Scripts
+Application ID: 17714-24709-95543-2448
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+### Application Name
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+人口推移アプリ (Population Transition App)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Application Description
 
-### `npm test`
+人口推移アプリ is a web application that can be used to view the population transition chart of some prefectures in Japan. This project was built to fulfill the requirement (code check) of Yumemi Co Ltd. frontend engineer job application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Live URL
 
-### `npm run build`
+https://verm024.github.io/population-transition-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Frontend framework: ReactJS (with native HTML and CSS)
+- Programming language: Typescript
+- Version control system: Github
+- Project management: Github Kanban
+- Application deployment: Github Pages
+- End-to-end testing: Cypress
+- Additional NPM modules: axios, prettier, eslint, rand-seed, react-redux, recharts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Development Environment
 
-### `npm run eject`
+Please run the command `npm start` to start the development mode.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Environment Variables
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- REACT_APP_API_KEY: It is a secret, please use your own Resas API key
+- REACT_APP_RESAS_BASE_URL: `https://opendata.resas-portal.go.jp`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Here is a tutorial about how to run the end-to-end testing script.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Run the application in developer mode using the command `npm start`
+- Run the command `npm run cypress:open` to open Cypress GUI
+- Choose the `E2E Testing` option
+- Choose Chrome as the browser and click `Start E2E Testing in Chrome`
+- Open the Specs tab and click on the script named `cypress/e2e/spec.cy.ts`
+- Please wait until the tests are finished
