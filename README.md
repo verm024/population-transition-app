@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# English Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name: Muhammad Naufal Arkan Rafii
 
-## Available Scripts
+Application ID: 17714-24709-95543-2448
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+### Application Name
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+人口推移アプリ (Population Transition App)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Application Description
 
-### `npm test`
+人口推移アプリ is a web application that can be used to view the population transition chart of some prefectures in Japan. This project was built to fulfill the requirement (code check) of Yumemi Co., Ltd. frontend engineer job application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Live URL
 
-### `npm run build`
+https://verm024.github.io/population-transition-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Development Date
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+September 2nd, 2022 to September 8th, 2022
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- Frontend framework: ReactJS (with native HTML and CSS)
+- Programming language: Typescript
+- Version control system: Github
+- Project management: Github Kanban
+- Application deployment: Github Pages
+- End-to-end testing: Cypress
+- Additional NPM modules: axios, prettier, eslint, rand-seed, react-redux, recharts
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Development Environment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Please run the command `npm start` to start the development mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Environment Variables
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- REACT_APP_API_KEY: It is a secret, please use your own Resas API key
+- REACT_APP_RESAS_BASE_URL: `https://opendata.resas-portal.go.jp`
 
-## Learn More
+## Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here is a tutorial about how to run the end-to-end testing script.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Run the application in developer mode using the command `npm start`
+- Run the command `npm run cypress:open` to open Cypress GUI
+- Choose the `E2E Testing` option
+  ![image](https://user-images.githubusercontent.com/45099597/189073082-64dfc1ba-5f50-44b4-a092-bdef0c14a681.png)
+- Choose Chrome as the browser and click `Start E2E Testing in Chrome`
+  ![image](https://user-images.githubusercontent.com/45099597/189073294-6a43ae7c-ad86-4ec5-b0db-ee34563c099b.png)
+- Open the Specs tab and click on the script named `cypress/e2e/spec.cy.ts`
+  ![image](https://user-images.githubusercontent.com/45099597/189073467-77453d35-2e03-4d2b-afb6-89fc08e87f4e.png)
+- Please wait until the tests are finished
+
+## Postscript
+
+Majority of the Japanese version of this document is translated by the help of [Google Translate](https://translate.google.co.id/?hl=id) and [Yandex Translate](https://translate.yandex.com/?lang=en-ja).
+
+# 日本語の説明
+
+名前: ムハマド・ナウファル・アルカン・ラフィー
+
+応募 ID: 17714-24709-95543-2448
+
+## プロジェクトの説明
+
+### アプリの名
+
+人口推移アプリ
+
+### アプリの内容
+
+「人口推移アプリ」は、日本の都道府県の人口推移のチャートを閲覧できる Web アプリです。 このプロジェクトは、株式会社ゆめみのフロントエンドエンジニア求人応募の要件を満たすために開発されました。
+
+### アプリ URL
+
+https://verm024.github.io/population-transition-app
+
+### 開発日
+
+2022 年 9 月 2 日から、2022 年 9 月 8 日まで
+
+## 使用した技術
+
+- フロントエンド フレームワーク: ReactJS (ネイティブの HTML と CSS を使用)
+- プログラミング言語: Typescript
+- バージョンコントロールシステム: Github
+- プロジェクト管理: Github Kanban
+- アプリケーションの展開: Github Pages
+- エンドツーエンドのテスト: Cypress
+- 追加の NPM モジュール: axios, prettier, eslint, rand-seed, react-redux, recharts
+
+## 開発環境
+
+開発モードを開始するには、`npm start`コマンドを実行してください。
+
+### 環境変数
+
+- REACT_APP_API_KEY: こちらは秘密で、自分の Resas API キーを使用してください
+- REACT_APP_RESAS_BASE_URL: `https://opendata.resas-portal.go.jp`
+
+## テスト
+
+こちらは、エンドツーエンドのテストスクリプトを実行する方法についてのチュートリアルです。
+
+- コマンド`npm start`を使用して開発モードでアプリを実行してください
+- コマンド`npm run cypress:open`を実行して Cypress GUI を開いてください
+- `E2E Testing`のオプションを選んでください
+  ![image](https://user-images.githubusercontent.com/45099597/189073082-64dfc1ba-5f50-44b4-a092-bdef0c14a681.png)
+- ブラウザとして Chrome を選んで、`Start E2E Testing in Chrome`のボタンをクリックしてください
+  ![image](https://user-images.githubusercontent.com/45099597/189073294-6a43ae7c-ad86-4ec5-b0db-ee34563c099b.png)
+- Specs タブを開いて、`cypress/e2e/spec.cy.ts`というスクリプトをクリックしてください
+  ![image](https://user-images.githubusercontent.com/45099597/189073467-77453d35-2e03-4d2b-afb6-89fc08e87f4e.png)
+- テストが終わるまでお待ちください
+
+## 追伸
+
+この資料の日本語版の大部分は、[Google Translate](https://translate.google.co.id/?hl=id)と[Yandex Translate](https://translate.yandex.com/?lang=en-ja)の助けを借りて翻訳されています。
