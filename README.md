@@ -18,6 +18,9 @@ Application ID: 17714-24709-95543-2448
 
 https://verm024.github.io/population-transition-app
 
+### Development Date
+September 2nd, 2022 to September 8th, 2022
+
 ## Technologies Used
 
 - Frontend framework: ReactJS (with native HTML and CSS)
